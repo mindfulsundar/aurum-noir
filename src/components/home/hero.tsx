@@ -18,12 +18,11 @@ export function HomeHero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const yBack = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const yMid = useTransform(scrollYProgress, [0, 1], [0, 90]);
-  const yFore = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const yGold = useTransform(scrollYProgress, [0, 1], [0, -220]);
-  const scaleMid = useTransform(scrollYProgress, [0, 1], [1.12, 1.28]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.15]);
+  const yBack = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const yMid = useTransform(scrollYProgress, [0, 1], [0, 70]);
+  const yFore = useTransform(scrollYProgress, [0, 1], [0, -160]);
+  const scaleMid = useTransform(scrollYProgress, [0, 1], [1.08, 1.22]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.2]);
 
   return (
     <section
@@ -32,11 +31,11 @@ export function HomeHero() {
       aria-label="Campaign hero"
     >
       <motion.div
-        className="absolute inset-[-12%] will-change-transform"
+        className="absolute inset-[-10%] will-change-transform"
         style={reduce ? undefined : { y: yBack }}
       >
         <Image
-          src={photos.ridge}
+          src={photos.savanna}
           alt=""
           fill
           priority
@@ -50,45 +49,32 @@ export function HomeHero() {
       >
         <Image
           src={photos.pit}
-          alt="Terraced mine with haul trucks moving along an African pit wall"
+          alt="Open-pit mine terraces with an excavator on the bench"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_40%]"
+          className="object-cover object-[center_45%]"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/45 to-canvas/25" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(194,165,116,0.18),transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/50 to-canvas/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_28%_45%,rgba(194,165,116,0.16),transparent_55%)]" />
 
-      <motion.div
-        className="pointer-events-none absolute -right-[8%] bottom-[8%] hidden h-[48vh] w-[38vw] max-w-xl will-change-transform lg:block"
+      <motion.aside
+        className="pointer-events-none absolute right-[6%] bottom-[12%] hidden w-[min(28vw,22rem)] will-change-transform lg:block"
         style={reduce ? undefined : { y: yFore }}
+        aria-hidden="true"
       >
-        <div className="relative h-full w-full overflow-hidden">
+        <div className="relative aspect-[4/5] overflow-hidden border border-hairline">
           <Image
             src={photos.bars}
             alt=""
             fill
-            sizes="40vw"
-            className="object-cover opacity-80"
+            sizes="28vw"
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-canvas/40 to-transparent" />
         </div>
-      </motion.div>
-
-      <motion.div
-        className="pointer-events-none absolute top-[18%] left-[8%] hidden h-40 w-40 will-change-transform md:block"
-        style={reduce ? undefined : { y: yGold }}
-        animate={reduce ? undefined : { rotate: [0, 6, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Image
-          src={photos.grain}
-          alt=""
-          fill
-          sizes="160px"
-          className="object-cover opacity-70"
-        />
-      </motion.div>
+      </motion.aside>
 
       <motion.div
         className="relative z-10 flex h-full flex-col justify-end px-6 pb-20 md:px-10 lg:px-16"
@@ -107,8 +93,8 @@ export function HomeHero() {
         <p className="mt-8 max-w-lg text-sm leading-relaxed text-ink/80 md:text-base">
           We own ground and we sit at the desk. Verified mine owners and
           legitimate sellers are introduced to qualified refiners, bullion
-          dealers, jewellery manufacturers, institutions, and investors — never
-          to anonymous inboxes.
+          dealers, jewellery manufacturers, institutions, and investors —
+          never to anonymous inboxes.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <MagneticLink href={buyHref} variant="solid">

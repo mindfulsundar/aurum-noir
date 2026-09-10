@@ -27,29 +27,23 @@ export const sellHref = "/sellers";
 export const buyHref = "/buyers";
 
 export const photos = {
-  pit: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=2400&q=80",
-  bars: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1800&q=80",
-  grain: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1800&q=80",
-  mill: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1800&q=80",
-  plant: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1800&q=80",
-  vault: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1800&q=80",
-  jewellery:
-    "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
-  signet:
-    "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1400&q=80",
-  coins:
-    "https://images.unsplash.com/photo-1755369355222-8146801ccf90?auto=format&fit=crop&w=1400&q=80",
-  nugget:
-    "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=1400&q=80",
-  range:
-    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2200&q=80",
-  ridge:
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=80",
-  dusk: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2200&q=80",
-  savanna:
-    "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=2200&q=80",
-  earth:
-    "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=2200&q=80",
+  pit: "/photos/pit.jpg",
+  bars: "/photos/bars.jpg",
+  grain: "/photos/bars.jpg",
+  mill: "/photos/truck.jpg",
+  plant: "/photos/aerial.jpg",
+  vault: "/photos/bars.jpg",
+  jewellery: "/photos/jewellery.jpg",
+  signet: "/photos/jewellery.jpg",
+  coins: "/photos/coins.jpg",
+  nugget: "/photos/bars.jpg",
+  range: "/photos/range.jpg",
+  ridge: "/photos/ridge.jpg",
+  dusk: "/photos/dusk.jpg",
+  savanna: "/photos/savanna.jpg",
+  earth: "/photos/range.jpg",
+  truck: "/photos/truck.jpg",
+  aerial: "/photos/aerial.jpg",
 };
 
 export const opportunities = [
