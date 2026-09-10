@@ -18,11 +18,11 @@ export function HomeHero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const yBack = useTransform(scrollYProgress, [0, 1], [0, 140]);
-  const yMid = useTransform(scrollYProgress, [0, 1], [0, 70]);
-  const yFore = useTransform(scrollYProgress, [0, 1], [0, -160]);
-  const scaleMid = useTransform(scrollYProgress, [0, 1], [1.08, 1.22]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.2]);
+  const yBack = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const yMid = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const yFore = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const scaleMid = useTransform(scrollYProgress, [0, 1], [1.1, 1.24]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.22]);
 
   return (
     <section
@@ -31,36 +31,41 @@ export function HomeHero() {
       aria-label="Campaign hero"
     >
       <motion.div
-        className="absolute inset-[-10%] will-change-transform"
+        className="absolute inset-[-8%] z-0 will-change-transform"
         style={reduce ? undefined : { y: yBack }}
       >
-        <Image
-          src={photos.savanna}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <div className="relative h-full min-h-full w-full">
+          <Image
+            src={photos.savanna}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
       </motion.div>
+
       <motion.div
-        className="absolute inset-0 will-change-transform"
+        className="absolute inset-0 z-[1] will-change-transform"
         style={reduce ? undefined : { y: yMid, scale: scaleMid }}
       >
-        <Image
-          src={photos.pit}
-          alt="Open-pit mine terraces with an excavator on the bench"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[center_45%]"
-        />
+        <div className="relative h-full w-full">
+          <Image
+            src={photos.pit}
+            alt="Open-pit mine terraces with an excavator on the bench"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_40%]"
+          />
+        </div>
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/50 to-canvas/30" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_28%_45%,rgba(194,165,116,0.16),transparent_55%)]" />
+
+      <div className="absolute inset-0 z-[2] bg-gradient-to-t from-canvas via-canvas/45 to-canvas/25" />
 
       <motion.aside
-        className="pointer-events-none absolute right-[6%] bottom-[12%] hidden w-[min(28vw,22rem)] will-change-transform lg:block"
+        className="pointer-events-none absolute right-[5%] bottom-[14%] z-[3] hidden w-[min(26vw,20rem)] will-change-transform lg:block"
         style={reduce ? undefined : { y: yFore }}
         aria-hidden="true"
       >
@@ -69,10 +74,9 @@ export function HomeHero() {
             src={photos.bars}
             alt=""
             fill
-            sizes="28vw"
+            sizes="26vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-canvas/40 to-transparent" />
         </div>
       </motion.aside>
 
